@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title><?php if(isset($title)) echo $title; ?></title>
-
+    <link rel="stylesheet" type="text/css" href="css/sample-app.css" />
+    
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
 					
 	<!-- Controller Specific JS/CSS -->
@@ -11,6 +12,28 @@
 </head>
 
 <body>	
+     <a href="/"><div id="masthead"></div></a>
+     <div id='menu'>
+
+        <a href='/'>Home</a>
+
+        <!-- Menu for users who are logged in -->
+        <?php if($user): ?>
+
+            <a href='/users/logout'>Logout</a>
+            
+
+        <!-- Menu options for users who are not logged in -->
+        <?php else: ?>
+
+            <a href='/users/signup'>Sign up</a>
+            <a href='/users/login'>Log in</a>
+
+        <?php endif; ?>
+
+    </div>
+
+    <br>
 
 	<?php if(isset($content)) echo $content; ?>
 
