@@ -164,52 +164,5 @@ class users_controller extends base_controller {
 }
 
 
-   #Allow image uploading
-   
-   public function p_upload() {
-   $allowedExts = array("gif", "jpeg", "jpg", "png");
-   $temp = explode(".", $_FILES["file"]["name"]);
-   $filename = $_FILES["file"]["name"];
-   $extension = end($temp);
-   if ((($_FILES["file"]["type"] == "image/gif")
-   || ($_FILES["file"]["type"] == "image/jpeg")
-   || ($_FILES["file"]["type"] == "image/jpg")
-   || ($_FILES["file"]["type"] == "image/pjpeg")
-   || ($_FILES["file"]["type"] == "image/x-png")
-   || ($_FILES["file"]["type"] == "image/png"))
-   && ($_FILES["file"]["size"] < 20000)
-   && in_array($extension, $allowedExts))
-    {
-   if ($_FILES["file"]["error"] > 0)
-    {
-    echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
-    }
-    else
-    {
-    echo "<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . "<p>You have uploaded a picture</p>" . "<br><a href='/users/profile'>Back to profile</a><br>";
-
-   #Check if file exists and save to uploads folder
-    if (file_exists("uploads/" . $_FILES["file"]["name"]))
-      {
-      echo $_FILES["file"]["name"] . " already exists. ";
-      }
-    else
-      {
-      move_uploaded_file($_FILES["file"]["tmp_name"],
-      "uploads/" . $_FILES["file"]["name"]);
-      
-    #Shows uploaded image
-      $url = "<img src='../uploads/" . $_FILES["file"]["name"] . "'></img>";
-      echo "<img src='../uploads/" . $_FILES["file"]["name"] . "'></img>";
-       }
-      }
-     }
-     else
-      {
-     echo "<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . "<p>Invalid file</p>" . "<br><a href='/users/profile'>Back to profile</a><br>";
-      }
-  
-
-  }
 
 } # eoc

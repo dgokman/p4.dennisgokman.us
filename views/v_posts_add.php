@@ -8,15 +8,6 @@ enctype="multipart/form-data">
 </form>
 
 
-<form method='POST' action='/posts/p_add'>
-
-    <label for='content'>Create a caption</label><br>
-    <textarea name='content' id='content' rows='2' columns='15'></textarea>
-
-    <br><br>
-    <input type='submit' value='New post'>
-
-</form> 
 
 <!-- Ajax results will go here -->
 <div id='results'></div>

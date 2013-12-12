@@ -26,7 +26,7 @@ class posts_controller extends base_controller {
 
     }
 
-    public function p_add() {
+   public function p_add() {
 
         # Associate this post with this user
         $_POST['user_id']  = $this->user->user_id;
@@ -122,7 +122,6 @@ class posts_controller extends base_controller {
     # Send back json results to the JS, formatted in json
     echo json_encode($data);
     }
-
 
    #Allow image uploading
    
