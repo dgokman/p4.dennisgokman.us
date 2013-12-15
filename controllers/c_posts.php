@@ -4,62 +4,28 @@ class posts_controller extends base_controller {
     public function __construct() {
         parent::__construct();
 
+        # Make sure user is logged in if they want to use anything in this controller
+        if(!$this->user) {
+            die("<link rel='stylesheet' type='text/css' href='../css/sample-app.css' /><p>Members only.</p> <a href='/users/login'>Login</a>");
+        }
     }
 
     public function add() {
 
         # Setup view
         $this->template->content = View::instance('v_posts_add');
-        $this->template->title   = "Add a new post";
+        $this->template->title   = "Start chatting";
         
         # Load JS files
         $client_files_body = Array(
-        "http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js",
-        "../js/jquery.form.js",
-        "../js/posts_add.js"
+        "'http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js",
+        "/js/jquery.form.js",
+        "/js/posts_add.js"
         );
 
         $this->template->client_files_body = Utils::load_client_files($client_files_body);   
-
-        # Render template
-        echo $this->template;
-
-    }
-
-   public function p_add() {
-
-        # Associate this post with this user
-        $_POST['user_id']  = $this->user->user_id;
-
-        # Unix timestamp of when this post was created / modified
-        $_POST['created']  = Time::now();
-        $_POST['modified'] = Time::now();
-
-        # Insert
-        # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
-        DB::instance(DB_NAME)->insert('posts', $_POST);
         
-        # Set up the view
-        $view = View::instance('v_posts_p_add');
-
-        # Pass data to the view
-        $view->created     = $_POST['created'];
-        $view->new_post_id = $new_post_id;
- 
-        # Render the view
-        echo $view;      
-
-        // Send a simple message back
-        echo "Your post was added";
-    }
-    
-    public function index() {
-
-    # Set up the View
-    $this->template->content = View::instance('v_posts_index');
-    $this->template->title   = "Posts";
-
-    # Query
+        # Query
     $q = 'SELECT 
             posts.content,
             posts.created,
@@ -84,90 +50,95 @@ class posts_controller extends base_controller {
     echo $this->template;
 
     }
+
+    public function p_add() {
+
+        # Associate this post with this user
+        $_POST['user_id']  = $this->user->user_id;
+
+        # Unix timestamp of when this post was created / modified
+        $_POST['created']  = Time::now();
+        $_POST['modified'] = Time::now();
+
+        # Insert
+        # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
+        DB::instance(DB_NAME)->insert('posts', $_POST);
+
+        // Send a simple message back
+        echo "Your post was added";
+    }
     
+    public function index() {
+
+    # Set up the View
+    $this->template->content = View::instance('v_posts_index');
+    $this->template->title   = "Posts";
+
     
-    public function control_panel() {
 
-    # Setup view
-        $this->template->content = View::instance('v_posts_control_panel');
-        $this->template->title   = "Control Panel";
+    }
+    
+    public function users() {
 
-    # JavaScript files
-        $client_files_body = Array(
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js',
-            '../js/jquery.form.js', 
-            '../js/posts_control_panel.js');
-        $this->template->client_files_body = Utils::load_client_files($client_files_body);
+    # Set up the View
+    $this->template->content = View::instance("v_posts_users");
+    $this->template->title   = "Users";
 
-    # Render template
-        echo $this->template;
+    # Build the query to get all the users
+    $q = "SELECT *
+        FROM users";
+
+    # Execute the query to get all the users. 
+    # Store the result array in the variable $users
+    $users = DB::instance(DB_NAME)->select_rows($q);
+
+    # Build the query to figure out what connections does this user already have? 
+    # I.e. who are they following
+    $q = "SELECT * 
+        FROM users_users
+        WHERE user_id = ".$this->user->user_id;
+
+    # Execute this query with the select_array method
+    # select_array will return our results in an array and use the "users_id_followed" field as the index.
+    # This will come in handy when we get to the view
+    # Store our results (an array) in the variable $connections
+    $connections = DB::instance(DB_NAME)->select_array($q, 'user_id_followed');
+
+    # Pass data (users and connections) to the view
+    $this->template->content->users       = $users;
+    $this->template->content->connections = $connections;
+
+    # Render the view
+    echo $this->template;
+    }
+    
+    public function follow($user_id_followed) {
+
+    # Prepare the data array to be inserted
+    $data = Array(
+        "created" => Time::now(),
+        "user_id" => $this->user->user_id,
+        "user_id_followed" => $user_id_followed
+        );
+
+    # Do the insert
+    DB::instance(DB_NAME)->insert('users_users', $data);
+
+    # Send them back
+    Router::redirect("/posts/users");
+
     }
 
-    public function p_control_panel() {
+    public function unfollow($user_id_followed) {
 
-    $data = Array();
+    # Delete this connection
+    $where_condition = 'WHERE user_id = '.$this->user->user_id.' AND user_id_followed = '.$user_id_followed;
+    DB::instance(DB_NAME)->delete('users_users', $where_condition);
 
-    # Find out how many posts there are
-    $q = "SELECT count(post_id) FROM posts";
-    $data['post_count'] = DB::instance(DB_NAME)->select_field($q);
+    # Send them back
+    Router::redirect("/posts/users");
 
-    # Find out how many users there are
-    $q = "SELECT count(user_id) FROM users";
-    $data['user_count'] = DB::instance(DB_NAME)->select_field($q);
-
-    # Find out when the last post was created
-    $q = "SELECT created FROM posts ORDER BY created DESC LIMIT 1";
-    $data['most_recent_post'] = Time::display(DB::instance(DB_NAME)->select_field($q));
-
-    # Send back json results to the JS, formatted in json
-    echo json_encode($data);
     }
-
-   #Allow image uploading
-   
-   public function p_upload() {
-   $allowedExts = array("gif", "jpeg", "jpg", "png");
-   $temp = explode(".", $_FILES["file"]["name"]);
-   $filename = $_FILES["file"]["name"];
-   $extension = end($temp);
-   if ((($_FILES["file"]["type"] == "image/gif")
-   || ($_FILES["file"]["type"] == "image/jpeg")
-   || ($_FILES["file"]["type"] == "image/jpg")
-   || ($_FILES["file"]["type"] == "image/pjpeg")
-   || ($_FILES["file"]["type"] == "image/x-png")
-   || ($_FILES["file"]["type"] == "image/png"))
-   && ($_FILES["file"]["size"] < 200000)
-   && in_array($extension, $allowedExts))
-    {
-   if ($_FILES["file"]["error"] > 0)
-    {
-    echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
-    }
-    else
-    {
-    echo "<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . "<p>You have uploaded a picture</p>" . "<br><a href='/users/profile'>Back to profile</a><br>";
-
-   #Check if file exists and save to uploads folder
-    if (file_exists("uploads/" . $_FILES["file"]["name"]))
-      {
-      echo $_FILES["file"]["name"] . " already exists. ";
-      }
-    else
-      {
-      move_uploaded_file($_FILES["file"]["tmp_name"],
-      "uploads/" . $_FILES["file"]["name"]);
-      
-    #Shows uploaded image
-      $url = "<img src='../uploads/" . $_FILES["file"]["name"] . "'></img>";
-      echo "<img src='../uploads/" . $_FILES["file"]["name"] . "'></img>";
-       }
-      }
-     }
-     else
-      {
-     echo "<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . "<p>Invalid file</p>" . "<br><a href='/users/profile'>Back to profile</a><br>";
-      }
-  }
 
 }
  #eoc ?>

@@ -1,0 +1,78 @@
+
+h1 {
+    font-family: Calibri;
+    color: #400000;
+    font-size: 20px;
+    }
+
+label, p, time, input {
+    font-family: Calibri;
+    font-size: 18px;
+    }
+    
+body {
+     background-color: beige;
+    }
+
+#follow, article, form {
+      border-style: outset;
+      border-color: #5D5D5D;
+      margin: 1em;
+      padding: 1em;
+      position: relative;
+      margin-left:0%;
+      margin-right:75%;
+      font-family: Calibri;
+      font-size: 16px;
+      }
+      
+#welcome {
+      border-style: outset;
+      border-color: #5D5D5D;
+      margin: 1em;
+      padding: 1em;
+      position: relative;
+      margin-left:0%;
+      margin-right:60%;
+      font-family: Calibri;
+      font-size: 20px;
+      }
+
+a:link {
+        text-decoration:none;
+        font-family: Calibri;
+        margin: 0.3em;
+        padding: 0.3em;
+        color: black;
+        font-size: 16px;
+        }
+a:visited {
+        text-decoration:none;
+        font-family: Calibri;
+        color: black;
+        font-size: 16px;
+        }
+
+a:hover {
+        text-decoration:underline;
+        font-family: Calibri;
+        font-size: 16px;
+        }
+a:active {
+        text-decoration:underline;
+        font-family: Calibri
+        color: black;
+        font-size: 16px;
+        }
+
+
+#masthead {
+display: none;
+padding: 20px 0 0 0;
+overflow: hidden;
+background-image: url(/images/masthead.png);
+background-repeat: no-repeat;
+width: 900px;
+height: 30px;
+border: solid;
+}
