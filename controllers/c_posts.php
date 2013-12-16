@@ -14,7 +14,7 @@ class posts_controller extends base_controller {
 
         # Setup view
         $this->template->content = View::instance('v_posts_add');
-        $this->template->title   = "Start chatting";
+        $this->template->title   = "Add a new post";
         
         # Load JS files
         $client_files_body = Array(

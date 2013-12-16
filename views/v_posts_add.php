@@ -6,26 +6,13 @@
     <textarea name='content' id='content' rows='2' columns='25'></textarea>
 
     <br><br>
-    <input type='submit' value='New post'>
+    <input type='submit' value='say it!'>
 
 </form> 
 
 <!-- Ajax results will go here -->
-<div id='results'>
+<div id='results'></div>
 
 <?php foreach($posts as $post): ?>
-
-<article>
-
-    <h1><?=$post['first_name']?> <?=$post['last_name']?> posted:</h1>
-
-    <p><?=$post['content']?></p>
-
-    <time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
-        <?=Time::display($post['created'])?>
-    </time>
-
-</article>
-
+   <p><?=$post['first_name']?> <?=$post['last_name']?>: <b><?=$post['content']?></b></p>
 <?php endforeach; ?>
-</div>
