@@ -1,13 +1,15 @@
 // Set up the options for ajax
+var value1 = $('#submitval' ).val();
 var options = { 
     type: 'POST',
     url: '/posts/p_add/',
     beforeSubmit: function() {
-        $('#results').html("Adding...");
+        
     },
     success: function(response) {   
-        $('#results').html("Well said");
-        
+        $('#name').append( $( "input" ).val('#chat')); 
+    	
+    	//$ ('#chat').append( $(value1));
     } 
 }; 
 
