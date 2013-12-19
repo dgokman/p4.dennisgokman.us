@@ -6,43 +6,34 @@
     <input name='content' id='content' size='63'></textarea>
 
     <br><br>
-    <input type='submit' id="submitval" value='sayit' ></input>
 
 
-<form method='POST' action='/posts/p_add'>
+
 
     <label for='content2'>Start Chatting:</label><br>
     <input name='content2' id='content2' size='63'></textarea>
 
     <br><br>
-    <input type='submit' id="submitval" value='sayit' ></input>
 
-</form> 
 
-<form method='POST' action='/posts/p_add'>
 
     <label for='content3'>Start Chatting:</label><br>
     <input name='content3' id='content3' size='63'></textarea>
 
     <br><br>
-    <input type='submit' id="submitval" value='sayit' ></input>
+    
 
-</form> 
 
-<form method='POST' action='/posts/p_add'>
 
     <label for='content4'>Start Chatting:</label><br>
     <input name='content4' id='content4' size='63'></textarea>
 
     <br><br>
-    <input type='submit' id="submitval" value='sayit' ></input>
+    
 
-</form> 
-
-<form method='POST' action='/posts/p_add'>
 
     <label for='content5'>Start Chatting:</label><br>
-    <input name='content5' id='content2' size='63'></textarea>
+    <input name='content5' id='content5' size='63'></textarea>
 
     <br><br>
     <input type='submit' id="submitval" value='sayit' ></input>

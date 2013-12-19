@@ -35,13 +35,9 @@ class posts_controller extends base_controller {
 
     public function p_add() {
 
-        # Associate this post with this user
-        $_POST['user_id']  = $this->user->user_id;
+       
 
-        # Unix timestamp of when this post was created / modified
-        $_POST['created']  = Time::now();
-        $_POST['modified'] = Time::now();
-
+      
         # Insert
         # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
         DB::instance(DB_NAME)->insert('posts', $_POST);
@@ -57,13 +53,12 @@ class posts_controller extends base_controller {
 
          # Query
     $q = "SELECT 
-            posts .* , 
-            users.first_name, 
-            users.last_name
+            posts .*  
+            
         FROM posts
-        INNER JOIN users 
-            ON posts.user_id = users.user_id
-        ORDER BY  posts.created DESC";
+        LIMIT 0, 5
+        
+        ";
 
     # Run the query
     $posts = DB::instance(DB_NAME)->select_rows($q);
