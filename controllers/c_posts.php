@@ -25,21 +25,7 @@ class posts_controller extends base_controller {
 
         $this->template->client_files_body = Utils::load_client_files($client_files_body);   
         
-        # Query
-    $q = "SELECT 
-            posts .* , 
-            users.first_name, 
-            users.last_name
-        FROM posts
-        INNER JOIN users 
-            ON posts.user_id = users.user_id
-        ORDER BY  posts.created DESC";
-
-    # Run the query
-    $posts = DB::instance(DB_NAME)->select_rows($q);
-
-    # Pass data to the View
-    $this->template->content->posts = $posts;
+   
     
 
     # Render the View
@@ -69,7 +55,24 @@ class posts_controller extends base_controller {
     $this->template->content = View::instance('v_posts_index');
     $this->template->title   = "Posts";
 
+         # Query
+    $q = "SELECT 
+            posts .* , 
+            users.first_name, 
+            users.last_name
+        FROM posts
+        INNER JOIN users 
+            ON posts.user_id = users.user_id
+        ORDER BY  posts.created DESC";
+
+    # Run the query
+    $posts = DB::instance(DB_NAME)->select_rows($q);
+
+    # Pass data to the View
+    $this->template->content->posts = $posts;
     
+    # Render the View
+    echo $this->template;
 
     }
     

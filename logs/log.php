@@ -1,7 +1,3 @@
-<Files yourpage.html>
-AddType application/x-httpd-php .html
-</Files>
-
 <?php foreach($posts as $post): ?>
    <div id="name"><?=$post['first_name']?> <?=$post['last_name']?>: <b><?=$post['content']?></b></div>
 <?php endforeach; ?>

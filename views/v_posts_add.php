@@ -8,7 +8,47 @@
     <br><br>
     <input type='submit' id="submitval" value='sayit' ></input>
 
+
+<form method='POST' action='/posts/p_add'>
+
+    <label for='content2'>Start Chatting:</label><br>
+    <input name='content2' id='content2' size='63'></textarea>
+
+    <br><br>
+    <input type='submit' id="submitval" value='sayit' ></input>
+
 </form> 
+
+<form method='POST' action='/posts/p_add'>
+
+    <label for='content3'>Start Chatting:</label><br>
+    <input name='content3' id='content3' size='63'></textarea>
+
+    <br><br>
+    <input type='submit' id="submitval" value='sayit' ></input>
+
+</form> 
+
+<form method='POST' action='/posts/p_add'>
+
+    <label for='content4'>Start Chatting:</label><br>
+    <input name='content4' id='content4' size='63'></textarea>
+
+    <br><br>
+    <input type='submit' id="submitval" value='sayit' ></input>
+
+</form> 
+
+<form method='POST' action='/posts/p_add'>
+
+    <label for='content5'>Start Chatting:</label><br>
+    <input name='content5' id='content2' size='63'></textarea>
+
+    <br><br>
+    <input type='submit' id="submitval" value='sayit' ></input>
+
+</form> 
+<div id="results"></div>
 <!--<div id="chatbox"></div>  
       
     <form method='POST' name="message" action="/posts/p_add'">  
@@ -19,9 +59,6 @@
 
 <!-- Ajax results will go here -->
 
-<?php foreach($posts as $post): ?>
-   <div id="name"><?=$post['first_name']?> <?=$post['last_name']?>: <b><?=$post['content']?></b></div>
-<?php endforeach; ?>
 
 <!--<?  
 session_start();  
