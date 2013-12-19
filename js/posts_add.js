@@ -7,7 +7,8 @@ var options = {
         
     },
     success: function(response) {   
-        $('#name').append( $( "input" ).val('#chat')); 
+        $('#name').innerHTML = '<b>' + $('#name').append( $( content ).val()) + '</b>'; 
+       
     	
     	//$ ('#chat').append( $(value1));
     } 

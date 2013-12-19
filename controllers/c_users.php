@@ -57,8 +57,8 @@ class users_controller extends base_controller {
         
         #Send e-mail upon registration
         $to = $_POST['email'];
-        $subject = "Welcome to Sweatr!";
-        $message = "Hello! Thank you for joining Sweatr. Now start posting and following!";
+        $subject = "Welcome to Cracklechat!";
+        $message = "Hello! Thank you for joining Cracklechat. Now start chatting!";
         mail($to,$subject,$message);
         echo "<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . '<p>You\'re signed up and have received e-mail confirmation</p>' . '<br>' . '<a href="/users/login">Back to Sweatr</a>';  
              

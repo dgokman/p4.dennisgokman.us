@@ -26,25 +26,21 @@ class posts_controller extends base_controller {
         $this->template->client_files_body = Utils::load_client_files($client_files_body);   
         
         # Query
-    $q = 'SELECT 
-            posts.content,
-            posts.created,
-            posts.user_id AS post_user_id,
-            users_users.user_id AS follower_id,
-            users.first_name,
+    $q = "SELECT 
+            posts .* , 
+            users.first_name, 
             users.last_name
         FROM posts
-        INNER JOIN users_users 
-            ON posts.user_id = users_users.user_id_followed
         INNER JOIN users 
             ON posts.user_id = users.user_id
-        WHERE users_users.user_id = '.$this->user->user_id;
+        ORDER BY  posts.created DESC";
 
     # Run the query
     $posts = DB::instance(DB_NAME)->select_rows($q);
 
     # Pass data to the View
     $this->template->content->posts = $posts;
+    
 
     # Render the View
     echo $this->template;
@@ -63,9 +59,8 @@ class posts_controller extends base_controller {
         # Insert
         # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
         DB::instance(DB_NAME)->insert('posts', $_POST);
+        
 
-        // Send a simple message back
-        echo "Your post was added";
     }
     
     public function index() {
