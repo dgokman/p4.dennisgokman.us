@@ -1,0 +1,28 @@
+2013-12-20 1:43:43 - INFO --> -------------------------- 
+2013-12-20 1:43:43 - INFO --> Controller/Method: posts/index 
+2013-12-20 1:43:43 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY dennis.gokman@gmail.com 
+2013-12-20 1:43:44 - INFO --> From: Good Kid MAAD Libs (webmaster@sample-app.com) 
+2013-12-20 1:43:44 - INFO --> To: Good Kid MAAD Libs (dennis.gokman@gmail.com),  
+2013-12-20 1:43:44 - INFO --> CC:  
+2013-12-20 1:43:44 - INFO --> BCC:  
+2013-12-20 1:43:44 - INFO --> Subject: Good Kid MAAD Libs SQL Error 
+2013-12-20 1:43:44 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'dennisgo_p4'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> posts/index<br/><h2>Cookies</h2><pre>Array
+(
+    [token] => 10be8c2c2ec80c6db1d23b89a50675d317e13922
+    [PHPSESSID] => 803f35694288e40cbeae4d0393eac19e
+)
+ 
+2013-12-20 1:43:46 - INFO --> -------------------------- 
+2013-12-20 1:43:46 - INFO --> Controller/Method: posts/index 
+2013-12-20 1:43:46 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY dennis.gokman@gmail.com 
+2013-12-20 1:43:46 - INFO --> From: Good Kid MAAD Libs (webmaster@sample-app.com) 
+2013-12-20 1:43:46 - INFO --> To: Good Kid MAAD Libs (dennis.gokman@gmail.com),  
+2013-12-20 1:43:46 - INFO --> CC:  
+2013-12-20 1:43:46 - INFO --> BCC:  
+2013-12-20 1:43:46 - INFO --> Subject: Good Kid MAAD Libs SQL Error 
+2013-12-20 1:43:46 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'dennisgo_p4'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> posts/index<br/><h2>Cookies</h2><pre>Array
+(
+    [token] => 10be8c2c2ec80c6db1d23b89a50675d317e13922
+    [PHPSESSID] => 803f35694288e40cbeae4d0393eac19e
+)
+ 
