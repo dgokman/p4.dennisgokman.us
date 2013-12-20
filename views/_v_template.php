@@ -15,14 +15,9 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
-<body>	
-     <a href="/"><div id="masthead"></div></a>
+    <body>	
      <div id='menu'>
-
         <a href='/'>Home</a>
-
-     
-
     </div>
 
     <br>

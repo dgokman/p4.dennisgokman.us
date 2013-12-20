@@ -1,6 +1,6 @@
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
  
-<form method='POST' action='/posts/p_add'>
+<form name="madlibs" method='POST' action='/posts/p_add'>
 
     <label for='adj1'>Adjective:</label><br>
     <input name='adj1' id='adj1' size='63'></textarea>
