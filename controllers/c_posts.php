@@ -43,7 +43,7 @@ class posts_controller extends base_controller {
     $this->template->title   = "Posts";
 
     # Query
-    $q = "SELECT 
+    $q = "SELECT FROM `dennisgo_p4_dennisgokman_us`
             posts .*      
         FROM posts
         LIMIT 0, 100 ";
@@ -62,7 +62,7 @@ class posts_controller extends base_controller {
     public function p_index() {
 
     # Reset database
-    $q = "DELETE 
+    $q = "DELETE FROM `dennisgo_p4_dennisgokman_us`
           posts .*      
           FROM posts ";
 
