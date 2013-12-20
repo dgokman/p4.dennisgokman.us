@@ -73,7 +73,7 @@
     
     
     
-    <input type='submit' id="submitval" value='sayit' ></input>
+    <input type='submit' id="submitval" value='DONE' ></input>
 
 </form> 
 <div id="results"></div>
