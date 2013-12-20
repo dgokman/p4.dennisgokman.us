@@ -43,7 +43,7 @@ class posts_controller extends base_controller {
     $this->template->title   = "Posts";
 
     # Query
-    $q = "SELECT FROM dennisgo_p4_dennisgokman_us
+    $q = "SELECT 
             posts .*      
         FROM posts
         LIMIT 0, 100 ";
@@ -62,7 +62,7 @@ class posts_controller extends base_controller {
     public function p_index() {
 
     # Reset database
-    $q = "DELETE FROM dennisgo_p4_dennisgokman_us
+    $q = "DELETE 
           posts .*      
           FROM posts ";
 
@@ -70,6 +70,7 @@ class posts_controller extends base_controller {
     $posts = DB::instance(DB_NAME)->select_rows($q);
     
     # Re-direct back to form page
+    /* Redirect browser */
     header("Location: ../posts/add");
     exit;
 
