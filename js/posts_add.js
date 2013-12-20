@@ -3,7 +3,7 @@ var options = {
     type: 'POST',
     url: '/posts/p_add/',
     success: function(response) {   
-        $('#results').html( "you're done!"); 
+        $('#results').html("<a href='/posts/index/'>Check your MAAD lib</a>"); 
        
     	
     	//$ ('#chat').append( $(value1));
