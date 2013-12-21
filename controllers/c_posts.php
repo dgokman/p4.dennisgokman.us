@@ -45,7 +45,7 @@ class posts_controller extends base_controller {
     $q = "SELECT 
             posts .*      
         FROM posts
-        LIMIT 0, 100 ";
+        LIMIT 0, 1 ";
 
     # Run the query
     $posts = DB::instance(DB_NAME)->select_rows($q);
@@ -68,7 +68,7 @@ class posts_controller extends base_controller {
     $q = "SELECT 
             posts .*      
         FROM posts
-        LIMIT 0, 100 ";
+        LIMIT 0, 1 ";
 
     # Run the query
     $posts = DB::instance(DB_NAME)->select_rows($q);
@@ -91,7 +91,7 @@ class posts_controller extends base_controller {
     $q = "SELECT 
             posts .*      
         FROM posts
-        LIMIT 0, 100 ";
+        LIMIT 0, 1 ";
 
     # Run the query
     $posts = DB::instance(DB_NAME)->select_rows($q);

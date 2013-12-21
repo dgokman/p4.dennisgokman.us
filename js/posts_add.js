@@ -143,7 +143,7 @@ var options = {
     type: 'POST',
     url: '/posts/p_add/',
     success: function(response) {   
-        $('#results').html("<p id='linklist'>Now select a MAAD Lib from the below to read your story</p><a href='/posts/madlib1/'>A CLASSIC MADLIB FROM 1958</a><br><a href='/posts/madlib2/'>A DENNIS GOKMAN ORIGINAL!</a><br><a href='/posts/madlib3/'>A DENNIS GOKMAN ORIGINAL!</a><br><a href='/posts/madlib4/'>A DENNIS GOKMAN ORIGINAL!</a><br><a href='/posts/madlib5/'>A DENNIS GOKMAN ORIGINAL!</a>"); 
+        $('#results').html("<p id='linklist'>Now select a MAAD Lib from the below to read your story</p><a href='/posts/madlib1/'>A CLASSIC MADLIB FROM 1958</a><br><a href='/posts/madlib2/'>AT THE DOCTOR'S OFFICE</a><br><a href='/posts/madlib3/'>A MODERN FABLE</a>"); 
        
     } 
 }; 

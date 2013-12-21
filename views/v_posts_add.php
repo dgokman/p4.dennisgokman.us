@@ -9,7 +9,7 @@
     <input name='adj2' id='adj2' size='63'> 
     <br><br>
 
-    <label for='name1'>Name of Host or Hostess:</label><br>
+    <label for='name1'>Name:</label><br>
     <input name='name1' id='name1' size='63'> 
     <br><br>
     
@@ -33,7 +33,7 @@
     <input name='adverb2' id='adverb2' size='63'> 
     <br><br>
     
-    <label for='name2'>Name of Person in Room:</label><br>
+    <label for='name2'>Name:</label><br>
     <input name='name2' id='name2' size='63'> 
     <br><br>
     
@@ -45,7 +45,7 @@
     <input name='noun1' id='noun1' size='63'> 
     <br><br>
     
-    <label for='name3'>Name of Person in Room:</label><br>
+    <label for='name3'>Name:</label><br>
     <input name='name3' id='name3' size='63'> 
     <br><br>
     
