@@ -6,5 +6,4 @@
 
 <form method='POST' action='/posts/p_index'>
 <input type='submit' class='submitval' id="reset" value='RESET' >
-
 </form> 
