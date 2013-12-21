@@ -9,10 +9,10 @@ Mad Libs are a classic game played by people of all ages where one person asks a
 
 App features:
 - Use of SQL database to collect words, query them, and delete them when finished
-- PHP insertion into pre-written story
-- Usage of AJAX to create a link to the story after submitting form
+- PHP insertion into pre-written stories 
+- Usage of AJAX to create a link to several stories after submitting form
 
 
 Javascript features:
-- AJAX link appearing after form is completed
+- AJAX links appearing after form is completed
 - Form verification to make sure all fields are entered
