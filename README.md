@@ -1,8 +1,18 @@
 p4.dennisgokman.us
 ==================
 
-<<<<<<< HEAD
 Project 4
 =======
 Final Project
->>>>>>> 7e04ebebf267661f3e7af2adb8a809c2e905325f
+
+Mad Libs are a classic game played by people of all ages where one person asks another to name a bunch of words, specifying noun, verb, person, etc. They then insert them into a pre-written story with blank spaces and hilarity ensues. My app, called Good Kid MAAD Libs, is a version of this game, without the need for a person, pencil, or paper. Simply, you enter the specified words into the form, and a story of varying humor gets spit out for you.
+
+App features:
+- Use of SQL database to collect words, query them, and delete them when finished
+- PHP insertion into pre-written story
+- Usage of AJAX to create a link to the story after submitting form
+
+
+Javascript features:
+- AJAX link appearing after form is completed
+- Form verification to make sure all fields are entered
