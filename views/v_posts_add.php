@@ -74,6 +74,9 @@
     
     <input type='submit' class="submitval" id="done" value='DONE!' ><br><br>
   <div id="results"></div>
+  
 </form> 
+
+
 
 

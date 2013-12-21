@@ -19,6 +19,12 @@ h1 {
     margin-left: 19%;
     }
 
+#linklist {
+    font-family: Helvetica, sans-serif;
+    color: black;
+    font-size: 30px;
+    }
+
 label, p, input {
     font-family: Helvetica, sans-serif;
     font-size: 18px;
@@ -54,29 +60,29 @@ body {
       }
 
 a:link {
-        text-decoration:none;
+        text-decoration:underline;
         font-family: Helvetica, sans-serif;
-        color: black;
-        font-size: 30px;
+        color: midnightblue;
+        font-size: 25px;
         }
 a:visited {
-        text-decoration:none;
+        text-decoration:underline;
         font-family: Helvetica, sans-serif;
-        color: black;
-        font-size: 30px;
+        color: midnightblue;
+        font-size: 25px;
         }
 
 a:hover {
         text-decoration:underline;
         font-family: Helvetica, sans-serif;
-        color: midnightblue;
-        font-size: 30px;
+        color: darkgreen;
+        font-size: 25px;
         }
 a:active {
-        text-decoration:none;
+        text-decoration:underline;
         font-family: Helvetica, sans-serif
-        color: black;
-        font-size: 30px;
+        color: midnightblue;
+        font-size: 25px;
         }
 
 .submitval {

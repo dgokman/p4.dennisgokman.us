@@ -33,14 +33,59 @@ class posts_controller extends base_controller {
         # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
         DB::instance(DB_NAME)->insert('posts', $_POST);
         
+    }
+    
+    public function madlib1() {
+
+    # Set up the View
+    $this->template->content = View::instance('v_posts_madlib1');
+    $this->template->title   = "Here's your MAAD Lib";
+
+    # Query
+    $q = "SELECT 
+            posts .*      
+        FROM posts
+        LIMIT 0, 100 ";
+
+    # Run the query
+    $posts = DB::instance(DB_NAME)->select_rows($q);
+
+    # Pass data to the View
+    $this->template->content->posts = $posts;
+    
+    # Render the View
+    echo $this->template;
 
     }
     
-    public function index() {
+    public function madlib2() {
 
     # Set up the View
-    $this->template->content = View::instance('v_posts_index');
-    $this->template->title   = "Posts";
+    $this->template->content = View::instance('v_posts_madlib2');
+    $this->template->title   = "Here's your MAAD Lib";
+
+    # Query
+    $q = "SELECT 
+            posts .*      
+        FROM posts
+        LIMIT 0, 100 ";
+
+    # Run the query
+    $posts = DB::instance(DB_NAME)->select_rows($q);
+
+    # Pass data to the View
+    $this->template->content->posts = $posts;
+    
+    # Render the View
+    echo $this->template;
+
+    }
+    
+    public function madlib3() {
+
+    # Set up the View
+    $this->template->content = View::instance('v_posts_madlib3');
+    $this->template->title   = "Here's your MAAD Lib";
 
     # Query
     $q = "SELECT 
