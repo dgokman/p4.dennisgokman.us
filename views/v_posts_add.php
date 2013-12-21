@@ -1,6 +1,5 @@
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
- 
-<form name="madlibs" method='POST' action='/posts/p_add'>
+<h1 id="subtitle2">Fill in the corresponding spaces to create a MAAD Lib</h1>
+ <form name="madlibs" id="madlibs" method='POST' action='/posts/p_add'>
 
     <label for='adj1'>Adjective:</label><br>
     <input name='adj1' id='adj1' size='63'> 
@@ -73,30 +72,8 @@
     
     
     
-    <input type='submit' id="submitval" value='DONE' > 
-
+    <input type='submit' class="submitval" id="done" value='DONE!' ><br><br>
+  <div id="results"></div>
 </form> 
-<div id="results"></div>
-<!--</div>  
-      
-    <form method='POST' name="message" action="/posts/p_add'">  
-        <textarea name="content" type="text" id="content" size="63" />  
-        <input name="submitmsg" type="submit" id="submitmsg" value="Send" />  
-    </form>  
-</div>  -->
-
-<!-- Ajax results will go here -->
-
-
-<!--<?  
-session_start();  
-if(isset($_SESSION['first_name'])){  
-    $text = $_POST['content'];  
-      
-    $fp = fopen("log.html", 'a');    
-    fclose($fp);  
-}  
-?>  -->
-
 
 

@@ -143,7 +143,7 @@ var options = {
     type: 'POST',
     url: '/posts/p_add/',
     success: function(response) {   
-        $('#results').html("<a href='/posts/index/'>Check your MAAD lib</a>"); 
+        $('#results').html("<a href='/posts/index/'>CLICK HERE TO READ YOUR MAAD LIB!</a>"); 
        
     } 
 }; 

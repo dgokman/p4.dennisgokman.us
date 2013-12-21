@@ -5,6 +5,6 @@
 <?php endforeach; ?>
 
 <form method='POST' action='/posts/p_index'>
-<input type='submit' id="submitval" value='RESET' >
+<input type='submit' class='submitval' id="reset" value='RESET' >
 
 </form> 

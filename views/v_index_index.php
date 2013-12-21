@@ -1,7 +1,10 @@
-<link rel="stylesheet" type="text/css" href="css/sample-app.css"/>
+
    <div id="welcome">
-      <h1><?=APP_NAME?></h1><br>
-          <a href="/posts/add">Create your story!</a><br>
+      <?=APP_NAME?><br>
+    </div>
+       <h1 id="subtitle">Your favorite childhood pastime is back</h1>
+          <form name="index" id="index" method='POST' action='/posts/add'>
+          <input type='submit' class="submitval" value='BEGIN!' href="/posts/add">
           
-   </div>
+   
      

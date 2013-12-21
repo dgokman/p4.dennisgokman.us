@@ -1,78 +1,126 @@
 
 h1 {
-    font-family: Calibri;
-    color: #400000;
+    font-family: Helvetica, sans-serif;
+    color: black;
     font-size: 20px;
     }
 
-label, p, time, input {
-    font-family: Calibri;
+#subtitle {
+    font-family: Helvetica, sans-serif;
+    color: black;
+    font-size: 30px;
+    margin-left: 21%;
+    }
+
+#subtitle2 {
+    font-family: Helvetica, sans-serif;
+    color: black;
+    font-size: 30px;
+    margin-left: 19%;
+    }
+
+label, p, input {
+    font-family: Helvetica, sans-serif;
     font-size: 18px;
     }
     
+submit {
+    font-size: 30px;
+    }
+    
 body {
-     background-color: beige;
+     background-color: gainsboro;
     }
 
-#follow, article, form {
-      border-style: outset;
-      border-color: #5D5D5D;
+#madlibs {
+      border-style: solid;
+      border-color: black;
+      width: 660px;
       margin: 1em;
       padding: 1em;
       position: relative;
-      margin-left:0%;
-      margin-right:75%;
-      font-family: Calibri;
+      margin-left: 20%;
+      font-family: Helvetica, sans-serif;
       font-size: 16px;
       }
       
 #welcome {
-      border-style: outset;
-      border-color: #5D5D5D;
-      margin: 1em;
-      padding: 1em;
+      margin: 0.3em;
+      padding: 0.2em;
       position: relative;
-      margin-left:0%;
-      margin-right:60%;
-      font-family: Calibri;
-      font-size: 20px;
+      margin-left:20%;
+      font-family: Helvetica, sans-serif;
+      font-size: 60px;
       }
 
 a:link {
         text-decoration:none;
-        font-family: Calibri;
-        margin: 0.3em;
-        padding: 0.3em;
+        font-family: Helvetica, sans-serif;
         color: black;
-        font-size: 16px;
+        font-size: 30px;
         }
 a:visited {
         text-decoration:none;
-        font-family: Calibri;
+        font-family: Helvetica, sans-serif;
         color: black;
-        font-size: 16px;
+        font-size: 30px;
         }
 
 a:hover {
         text-decoration:underline;
-        font-family: Calibri;
-        font-size: 16px;
+        font-family: Helvetica, sans-serif;
+        color: midnightblue;
+        font-size: 30px;
         }
 a:active {
-        text-decoration:underline;
-        font-family: Calibri
+        text-decoration:none;
+        font-family: Helvetica, sans-serif
         color: black;
-        font-size: 16px;
+        font-size: 30px;
         }
 
-
-#masthead {
-display: none;
-padding: 20px 0 0 0;
-overflow: hidden;
-background-image: url(/images/masthead.png);
-background-repeat: no-repeat;
-width: 900px;
-height: 30px;
-border: solid;
+.submitval {
+    margin-left:33%;
+	-moz-box-shadow:inset 0px 1px 23px 0px #bee2f9;
+	-webkit-box-shadow:inset 0px 1px 23px 0px #bee2f9;
+	box-shadow:inset 0px 1px 23px 0px #bee2f9;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #468ccf) );
+	background:-moz-linear-gradient( center top, #63b8ee 5%, #468ccf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf');
+	background-color:#63b8ee;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0px;
+	border:2px solid #3866a3;
+	display:inline-block;
+	color:#14396a;
+	font-family:Arial;
+	font-size:27px;
+	font-weight:bold;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	width:200px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:-17px 7px 15px #7cacde;
+}
+.submitval:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee) );
+	background:-moz-linear-gradient( center top, #468ccf 5%, #63b8ee 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee');
+	background-color:#468ccf;
+}.submitval:active {
+	position:relative;
+	top:1px;
 }
